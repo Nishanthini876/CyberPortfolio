@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishanthini V | Cybersecurity Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #080d18;
+    --card: #101a2b;
+    --cyan: #00e5ff;
+    --blue: #3478f6;
+    --text: #e8f1ff;
+    --muted: #9aaac0;
+    --border: rgba(0,229,255,0.17);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(8,13,24,0.95);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 23px;
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.logo span {
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: var(--cyan);
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    background:
+    radial-gradient(ellipse at 80% 40%, rgba(0,229,255,.10), transparent 45%),
+    radial-gradient(ellipse at 15% 80%, rgba(52,120,246,.12), transparent 40%);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.terminal-tag {
+    display: inline-block;
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    border: 1px solid var(--border);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero h2 {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: clamp(17px, 2vw, 24px);
+    font-weight: 500;
+}
+
+.typing {
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 22px 0 32px;
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 23px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary {
+    background: var(--cyan);
+    color: #07111b;
+}
+
+.primary:hover {
+    box-shadow: 0 0 25px rgba(0,229,255,.4);
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+}
+
+.secondary:hover {
+    background: rgba(0,229,255,.1);
+}
+
+/* PROFILE IMAGE */
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: var(--cyan);
+    filter: blur(110px);
+    opacity: .15;
+    border-radius: 50%;
+}
+
+.profile-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 430px;
+    height: 530px;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 0 22px rgba(0,229,255,.2));
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* COMMON SECTIONS */
+
+section:not(.hero) {
+    padding: 100px 0;
+}
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title small {
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    margin-top: 8px;
+}
+
+.section-title h2 span {
+    color: var(--cyan);
+}
+
+.section-title p {
+    color: var(--muted);
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .7fr;
+    gap: 35px;
+}
+
+.about-text, .info-card, .skill-card,
+.project-card, .achievement-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.info-card h3 {
+    color: var(--cyan);
+    margin-bottom: 18px;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+.info-card strong {
+    color: white;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    transition: .3s;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--cyan);
+}
+
+.skill-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    color: var(--cyan);
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.skill-card ul {
+    list-style: none;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.skill-card li {
+    margin: 9px 0;
+}
+
+.skill-card li::before {
+    content: "> ";
+    color: var(--cyan);
+}
+
+/* PROJECTS */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    transition: .3s;
+}
+
+.project-type {
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.project-card h3 {
+    font-size: 19px;
+    margin: 14px 0;
+}
+
+.project-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tags span {
+    padding: 5px 10px;
+    font-size: 11px;
+    border-radius: 4px;
+    background: rgba(0,229,255,.08);
+    color: var(--cyan);
+}
+
+.project-link {
+    color: var(--cyan);
+    font-size: 13px;
+}
+
+/* ACHIEVEMENTS */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.achievement-card h3 {
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* CONTACT */
+
+.contact-box {
+    text-align: center;
+    padding: 50px 25px;
+    background: linear-gradient(135deg, #101a2b, #0b2130);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.contact-box h2 {
+    font-size: 32px;
+}
+
+.contact-box h2 span {
+    color: var(--cyan);
+}
+
+.contact-box p {
+    color: var(--muted);
+    margin: 15px auto 25px;
+    max-width: 550px;
+    font-size: 14px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.socials a {
+    border: 1px solid var(--border);
+    color: var(--cyan);
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.socials a:hover {
+    background: rgba(0,229,255,.1);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* SCROLL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #101a2b;
+        padding: 25px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .profile-photo {
+        max-width: 320px;
+        height: 400px;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .projects-grid,
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section:not(.hero) {
+        padding: 75px 0;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .section-title h2 {
+        font-size: 29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<nav class="container">
+
+    <a href="#home" class="logo">&lt;NV<span>/&gt;</span></a>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+<div class="container hero-container">
+
+    <div class="hero-content">
+
+        <div class="terminal-tag">
+            &gt; Initializing cybersecurity portfolio...
+        </div>
+
+        <h1>
+            Hello, I'm<br>
+            <span>Nishanthini V.</span>
+        </h1>
+
+        <h2>
+            I'm an aspiring <span class="typing" id="typing"></span>
+        </h2>
+
+        <p>
+            M.Sc. Cyber Security student passionate about ethical hacking,
+            web application security, vulnerability assessment,
+            and exploring the world of offensive security.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn primary">Explore My Work ↗</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+
+    </div>
+
+    <!-- YOUR PHOTO ON RIGHT SIDE -->
+
+    <div class="hero-image">
+        <div class="image-glow"></div>
+        <img src="profile.png"
+             alt="Nishanthini V"
+             class="profile-photo">
+    </div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container">
+
+    <div class="section-title reveal">
+        <small>01 / ABOUT ME</small>
+        <h2>Who <span>Am I?</span></h2>
+        <p>A little introduction about my journey in cybersecurity.</p>
+    </div>
+
+    <div class="about-grid reveal">
+
+        <div class="about-text">
+            <p>
+                Hello! I'm Nishanthini V, an M.Sc. Cyber Security student
+                with a strong interest in understanding how systems,
+                networks, and applications can be secured.
+            </p>
+
+            <p>
+                My cybersecurity journey involves learning ethical hacking,
+                web application security, penetration testing fundamentals,
+                and solving Capture The Flag (CTF) challenges.
+            </p>
+
+            <p>
+                I enjoy hands-on learning, exploring security tools,
+                analysing vulnerabilities, and continuously improving
+                my technical skills.
+            </p>
+
+            <p>
+                My goal is to grow as a cybersecurity professional,
+                with a particular interest in offensive security,
+                bug bounty hunting, and red team operations.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>Quick Information</h3>
+            <p><strong>Name:</strong> Nishanthini V</p>
+            <p><strong>Education:</strong> M.Sc. Cyber Security</p>
+            <p><strong>University:</strong> NFSU, Chennai</p>
+            <p><strong>Background:</strong> BCA</p>
+            <p><strong>Interests:</strong> Ethical Hacking, CTFs</p>
+            <p><strong>Career Goal:</strong> Cybersecurity Professional</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<div class="container">
+
+    <div class="section-title reveal">
+        <small>02 / TECHNICAL SKILLS</small>
+        <h2>My <span>Skills</span></h2>
+        <p>Technologies and tools I'm learning and working with.</p>
+    </div>
+
+    <div class="skills-grid reveal">
+
+        <div class="skill-card">
+            <div class="skill-icon">⌘</div>
+            <h3>Cybersecurity</h3>
+            <ul>
+                <li>Ethical Hacking Fundamentals</li>
+                <li>Web Application Security</li>
+                <li>Vulnerability Assessment</li>
+                <li>CTF Challenges</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">⌨</div>
+            <h3>Security Tools</h3>
+            <ul>
+                <li>Kali Linux</li>
+                <li>Nmap</li>
+                <li>Burp Suite</li>
+                <li>Linux Command Line</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">⟨/⟩</div>
+            <h3>Programming</h3>
+            <ul>
+                <li>Python</li>
+                <li>HTML & CSS</li>
+                <li>JavaScript Fundamentals</li>
+                <li>SQL Fundamentals</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">◈</div>
+            <h3>Networking</h3>
+            <ul>
+                <li>TCP/IP</li>
+                <li>OSI Model</li>
+                <li>DNS</li>
+                <li>Network Fundamentals</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">▦</div>
+            <h3>Data & Analytics</h3>
+            <ul>
+                <li>Python Libraries</li>
+                <li>Power BI</li>
+                <li>Microsoft Excel</li>
+                <li>Machine Learning Basics</li>
+            </ul>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">◎</div>
+            <h3>Areas of Interest</h3>
+            <ul>
+                <li>Penetration Testing</li>
+                <li>Bug Bounty Hunting</li>
+                <li>Red Team Operations</li>
+                <li>Digital Forensics</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+<div class="container">
+
+    <div class="section-title reveal">
+        <small>03 / PROJECTS</small>
+        <h2>Featured <span>Projects</span></h2>
+        <p>Some of my academic and technical work.</p>
+    </div>
+
+    <div class="projects-grid reveal">
+
+        <div class="project-card">
+            <div class="project-type">01 / MACHINE LEARNING</div>
+            <h3>Employee Attrition Prediction</h3>
+            <p>
+                Developed a machine learning model to predict employee
+                attrition using the IBM HR Analytics dataset.
+                Implemented Random Forest and evaluated model performance.
+            </p>
+            <div class="tags">
+                <span>Python</span>
+                <span>Random Forest</span>
+                <span>Machine Learning</span>
+            </div>
+            <a href="YOUR_GITHUB_PROJECT_LINK" target="_blank"
+               class="project-link">View Project ↗</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-type">02 / CYBERSECURITY</div>
+            <h3>Phishing URL Detection</h3>
+            <p>
+                Extracted URL and email-related features and explored
+                supervised machine learning techniques to classify
+                phishing and legitimate samples.
+            </p>
+            <div class="tags">
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Phishing Detection</span>
+            </div>
+            <a href="YOUR_GITHUB_PROJECT_LINK" target="_blank"
+               class="project-link">View Project ↗</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-type">03 / CRYPTOGRAPHY</div>
+            <h3>Image Steganography</h3>
+            <p>
+                Exploring image steganography techniques for hiding
+                information inside digital images and comparing
+                their performance on grayscale and colour images.
+            </p>
+            <div class="tags">
+                <span>Python</span>
+                <span>Image Processing</span>
+                <span>Cryptography</span>
+            </div>
+            <a href="YOUR_GITHUB_PROJECT_LINK" target="_blank"
+               class="project-link">View Project ↗</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-type">04 / SECURITY PRACTICE</div>
+            <h3>CTF Challenges & Labs</h3>
+            <p>
+                Practising cybersecurity concepts through Capture
+                The Flag challenges, Linux forensics, web security,
+                cryptography, and vulnerability analysis.
+            </p>
+            <div class="tags">
+                <span>CTF</span>
+                <span>Linux</span>
+                <span>Web Security</span>
+            </div>
+            <a href="YOUR_GITHUB_LINK" target="_blank"
+               class="project-link">View GitHub ↗</a>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+<div class="container">
+
+    <div class="section-title reveal">
+        <small>04 / ACHIEVEMENTS</small>
+        <h2>My <span>Achievements</span></h2>
+        <p>Milestones from my learning journey.</p>
+    </div>
+
+    <div class="achievement-grid reveal">
+
+        <div class="achievement-card">
+            <h3>🏆 CTF Achievement</h3>
+            <p>
+                Secured the top position in the college-level
+                CoE-CS CTF 2.0 qualifier conducted in September 2026.
+            </p>
+        </div>
+
+        <div class="achievement-card">
+            <h3>🎯 CTF Practice</h3>
+            <p>
+                Participated in cybersecurity challenges involving
+                cryptography, forensics, reverse engineering,
+                and miscellaneous problem-solving.
+            </p>
+        </div>
+
+        <div class="achievement-card">
+            <h3>🎓 Academic Journey</h3>
+            <p>
+                Pursuing M.Sc. Cyber Security at National Forensic
+                Sciences University, Chennai.
+            </p>
+        </div>
+
+        <div class="achievement-card">
+            <h3>💻 Technical Experience</h3>
+            <p>
+                Explored robotics, IoT, web development,
+                Python programming, and machine learning
+                through academic and internship projects.
+            </p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<div class="container">
+
+    <div class="contact-box reveal">
+        <h2>Let's <span>Connect!</span></h2>
+
+        <p>
+            I'm always interested in connecting with cybersecurity
+            enthusiasts, learning from professionals, and exploring
+            new opportunities in the cybersecurity domain.
+        </p>
+
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/nishanthini-v-5356622b8/="_blank">LinkedIn ↗</a>
+            <a href="https://github.com/Nishanthini876" target="_blank">GitHub ↗</a>
+            <a href="mailto:nishanthiniv009876@gmail.com">Email ↗</a>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Nishanthini V | Designed with curiosity & code.
+    <br><br>
+    <span style="color:#00e5ff">
+        [ SYSTEM STATUS: LEARNING & BUILDING ]
+    </span>
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// TYPING ANIMATION
+
+const roles = [
+    "Cybersecurity Enthusiast",
+    "Ethical Hacking Learner",
+    "CTF Player",
+    "Aspiring Security Professional"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const current = roles[roleIndex];
+    const element = document.getElementById("typing");
+
+    element.textContent = current.substring(0, charIndex);
+
+    if (!deleting && charIndex < current.length) {
+
+        charIndex++;
+        setTimeout(typeEffect, 90);
+
+    } else if (deleting && charIndex > 0) {
+
+        charIndex--;
+        setTimeout(typeEffect, 45);
+
+    } else {
+
+        deleting = !deleting;
+
+        if (!deleting) {
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+
+        setTimeout(typeEffect, 700);
+    }
+}
+
+typeEffect();
+
+// MOBILE MENU
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+// SCROLL ANIMATION
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+
+    });
+
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
