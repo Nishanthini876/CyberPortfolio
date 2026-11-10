@@ -31,6 +31,7 @@ body {
     color: var(--text);
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 a {
@@ -119,7 +120,8 @@ nav {
 }
 
 .hero-content {
-    flex: 1;
+    flex: 1 1 58%;
+    min-width: 0;
     max-width: 650px;
 }
 
@@ -199,11 +201,32 @@ nav {
 /* PROFILE IMAGE */
 
 .hero-image {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    min-width: 0;
+}
+
+/* LAPTOP IMAGE ON RIGHT */
+
+.desktop-hero-image {
+    flex: 0 1 42%;
+    justify-content: flex-end;
+}
+
+.desktop-hero-image .profile-photo {
+    width: 100%;
+    max-width: 430px;
+    height: 530px;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+/* HIDE MOBILE IMAGE ON LAPTOP */
+
+.mobile-hero-image {
+    display: none;
 }
 
 .image-glow {
@@ -521,6 +544,20 @@ footer {
 
     .hero-content {
         width: 100%;
+        max-width: 100%;
+    }
+
+    /* HIDE LAPTOP IMAGE */
+
+    .desktop-hero-image {
+        display: none;
+    }
+
+    /* SHOW MOBILE IMAGE */
+
+    .mobile-hero-image {
+        display: flex;
+        width: 100%;
     }
 
     .hero p {
@@ -592,24 +629,28 @@ footer {
 
 <div class="container hero-container">
 
+    <!-- LEFT SIDE CONTENT -->
+
     <div class="hero-content">
 
         <div class="terminal-tag">
             &gt; Initializing cybersecurity portfolio...
         </div>
 
-       
         <h1>
             Hello, I'm<br>
             <span>Nishanthini V.</span>
         </h1>
 
-         <div class="hero-image">
-        <div class="image-glow"></div>
-        <img src="profile.png"
-             alt="Nishanthini V"
-             class="profile-photo">
-    </div>
+        <!-- MOBILE PHOTO -->
+
+        <div class="hero-image mobile-hero-image">
+            <div class="image-glow"></div>
+            <img src="profile.png"
+                 alt="Nishanthini V"
+                 class="profile-photo">
+        </div>
+
         <h2>
             I'm an aspiring <span class="typing" id="typing"></span>
         </h2>
@@ -627,9 +668,14 @@ footer {
 
     </div>
 
-    <!-- YOUR PHOTO ON RIGHT SIDE -->
+    <!-- LAPTOP PHOTO ON RIGHT SIDE -->
 
-    
+    <div class="hero-image desktop-hero-image">
+        <div class="image-glow"></div>
+        <img src="profile.png"
+             alt="Nishanthini V"
+             class="profile-photo">
+    </div>
 
 </div>
 </section>
@@ -791,60 +837,65 @@ footer {
                 attrition using the IBM HR Analytics dataset.
                 Implemented Random Forest and evaluated model performance.
             </p>
+
             <div class="tags">
                 <span>Python</span>
                 <span>Random Forest</span>
                 <span>Machine Learning</span>
             </div>
-            <a href="https://github.com/Nishanthini876/employee-attrition-prediction" target="_blank"
+
+            <a href="https://github.com/Nishanthini876/employee-attrition-prediction"
+               target="_blank" rel="noopener noreferrer"
                class="project-link">View Project ↗</a>
         </div>
 
-    
+        <div class="project-card">
+            <div class="project-type">02 / WEB SECURITY PRACTICE</div>
+            <h3>PortSwigger Web Security Notes</h3>
+            <p>
+                Documenting hands-on learning and practical notes
+                from PortSwigger Web Security Academy, covering
+                SQL Injection, XSS, Access Control, Authentication,
+                Path Traversal, and SSRF vulnerabilities.
+            </p>
+
+            <div class="tags">
+                <span>PortSwigger</span>
+                <span>Web Security</span>
+                <span>Burp Suite</span>
+            </div>
+
+            <a href="https://github.com/Nishanthini876/PortSwigger-Notes"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">View Project ↗</a>
+        </div>
 
         <div class="project-card">
-    <div class="project-type">02 / WEB SECURITY PRACTICE</div>
-    <h3>PortSwigger Web Security Notes</h3>
-    <p>
-        Documenting hands-on learning and practical notes
-        from PortSwigger Web Security Academy, covering
-        SQL Injection, XSS, Access Control, Authentication,
-        Path Traversal, and SSRF vulnerabilities.
-    </p>
-    <div class="tags">
-        <span>PortSwigger</span>
-        <span>Web Security</span>
-        <span>Burp Suite</span>
-    </div>
-    <a href="https://github.com/Nishanthini876/PortSwigger-Notes"
-       target="_blank" class="project-link">
-       View Project ↗
-    </a>
-</div>
-   
+            <div class="project-type">03 / IoT & CYBERSECURITY</div>
+            <h3>Secure & Smart Home System</h3>
+            <p>
+                Developed a smart home security concept integrating
+                IoT technology and security features to improve
+                home monitoring, detect unknown IP addresses,
+                access control, and safety.
+                Focused on secure communication, real-time monitoring,
+                and smart device management.
+            </p>
 
+            <div class="tags">
+                <span>IoT</span>
+                <span>C programming</span>
+                <span>ESP32</span>
+                <span>Home Automation</span>
+            </div>
 
-    
-    <div class="project-card">
-    <div class="project-type">03 / IoT & CYBERSECURITY</div>
-    <h3>Secure & Smart Home System</h3>
-    <p>
-        Developed a smart home security concept integrating
-        IoT technology and security features to improve
-        home monitoring,Detect unknown IP adresses, access control, and safety.
-        Focused on secure communication, real-time monitoring,
-        and smart device management.
-    </p>
-    <div class="tags">
-        <span>IoT</span>
-        <span>C programming</span>
-        <span>ESP32</span>
-        <span>Home Automation</span>
+            <a href="https://drive.google.com/drive/folders/1bqZcVx01RC92wsFAUj7t016_lWsJTAgF"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">View Project ↗</a>
+        </div>
+
     </div>
-    <a href="https://drive.google.com/drive/folders/1bqZcVx01RC92wsFAUj7t016_lWsJTAgF" class="project-link">View Project ↗</a>
 </div>
-</div>
- </div>
 </section>
 
 <!-- ACHIEVEMENTS -->
@@ -859,42 +910,49 @@ footer {
     </div>
 
     <div class="achievement-grid reveal">
+
         <div class="project-card">
-    <div class="project-type">01 /  🏆 CTF ACHIEVEMENT</div>
-    <h3>PinakaCTF 2026</h3>
-    <p>
-        Participated in PinakaCTF 2026, a Capture The Flag
-        cybersecurity competition, securing 24th place.
-        Solved hands-on challenges involving cryptography,
-        digital forensics, reverse engineering, and
-        security problem-solving.
-    </p>
-    <div class="tags">
-        <span>24th Place</span>
-        <span>CTF</span>
-        <span>Cryptography</span>
-        <span>Digital Forensics</span>
-    </div>
-    <a href="https://drive.google.com/drive/folders/1sLYntSnnR4S9hfIVaH26Fe4h68GV8Fd2?usp=sharing" class="project-link">View Achievement ↗</a>
-</div>
-      <div class="project-card">
-    <div class="project-type">02 / CTF ACHIEVEMENT</div>
-    <h3>NFSU Campus CTF</h3>
-    <p>
-        Participated in the NFSU Campus Capture The Flag
-        competition and secured 20th rank. Gained practical
-        experience in solving cybersecurity challenges,
-        logical problem-solving, and applying security
-        concepts through hands-on challenges.
-    </p>
-    <div class="tags">
-        <span>20th Rank</span>
-        <span>CTF</span>
-        <span>Cybersecurity</span>
-        <span>Problem Solving</span>
-    </div>
-    
-</div> 
+            <div class="project-type">01 / 🏆 CTF ACHIEVEMENT</div>
+            <h3>PinakaCTF 2026</h3>
+            <p>
+                Participated in PinakaCTF 2026, a Capture The Flag
+                cybersecurity competition, securing 24th place.
+                Solved hands-on challenges involving cryptography,
+                digital forensics, reverse engineering, and
+                security problem-solving.
+            </p>
+
+            <div class="tags">
+                <span>24th Place</span>
+                <span>CTF</span>
+                <span>Cryptography</span>
+                <span>Digital Forensics</span>
+            </div>
+
+            <a href="https://drive.google.com/drive/folders/1sLYntSnnR4S9hfIVaH26Fe4h68GV8Fd2?usp=sharing"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">View Achievement ↗</a>
+        </div>
+
+        <div class="project-card">
+            <div class="project-type">02 / CTF ACHIEVEMENT</div>
+            <h3>NFSU Campus CTF</h3>
+            <p>
+                Participated in the NFSU Campus Capture The Flag
+                competition and secured 20th rank. Gained practical
+                experience in solving cybersecurity challenges,
+                logical problem-solving, and applying security
+                concepts through hands-on challenges.
+            </p>
+
+            <div class="tags">
+                <span>20th Rank</span>
+                <span>CTF</span>
+                <span>Cybersecurity</span>
+                <span>Problem Solving</span>
+            </div>
+        </div>
+
         <div class="achievement-card">
             <h3>🎓 Academic Journey</h3>
             <p>
@@ -931,12 +989,21 @@ footer {
         </p>
 
         <div class="socials">
-            <a href="https://www.linkedin.com/in/nishanthini-v-5356622b8/="_blank">LinkedIn ↗</a>
-            <a href="https://github.com/Nishanthini876" target="_blank">GitHub ↗</a>
-         <a href="mailto:nishanthiniv009876@gmail.com"
-   class="project-link">
-   nishanthiniv009876@gmail.com ↗
-</a>
+
+            <a href="https://www.linkedin.com/in/nishanthini-v-5356622b8/"
+               target="_blank" rel="noopener noreferrer">
+               LinkedIn ↗
+            </a>
+
+            <a href="https://github.com/Nishanthini876"
+               target="_blank" rel="noopener noreferrer">
+               GitHub ↗
+            </a>
+
+            <a href="mailto:nishanthiniv009876@gmail.com">
+               nishanthiniv009876@gmail.com ↗
+            </a>
+
         </div>
     </div>
 
